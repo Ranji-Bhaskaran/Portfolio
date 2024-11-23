@@ -1,0 +1,28 @@
+.time{
+    z-index: 1;
+}
+h4{
+    text-align: start;
+}
+/*.content:hover{
+    transform: scale(1.05);
+
+}*/ 
+
+.education {
+    font-family: 'Centra Sans Serif', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  text-align: center;
+}
+body{
+    font-weight : 400;
+    overflow-x: hidden;
+    position: relative;
+    background-color:  black !important;
+    
+    color: #fff !important;
+    font-family: 'Centra', sans-serif !important;
+  }

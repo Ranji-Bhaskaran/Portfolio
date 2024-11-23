@@ -1,0 +1,37 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # specify your desired Node.js version
+
+    - name: Install dependencies
+      run: |
+        npm install  # or yarn install depending on the package manager you're using
+
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20  # Vercel GitHub Action
+      with:
+        vercel_token: ${{ secrets.VERCEL_TOKEN }}   # You need to set your Vercel token in GitHub Secrets
+        vercel_org_id: ${{ secrets.VERCEL_ORG_ID }} # You can get this from your Vercel Dashboard
+        vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }} # Project ID from Vercel
+        vercel_dir: '.'  # Set to the directory where your Vercel project is (usually the root)
+      
+    - name: Vercel Deploy Log
+      run: echo "Deployed to Vercel successfully"

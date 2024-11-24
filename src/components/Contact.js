@@ -22,7 +22,7 @@ export const Contact = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         setButtonText('Sending...');
-        let response = await fetch ("https://formspree.io/f/xzbnrbyy",{
+        let response = await fetch ("https://formspree.io/f/xpwzjpqq",{
             method :"POST",
             headers :{
                 "Content-Type": "Application/json;charset=utf-8",

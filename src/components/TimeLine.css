@@ -2,7 +2,7 @@
     z-index: 1;
 }
 h4{
-    text-align: start;
+    text-align: center;
 }
 /*.content:hover{
     transform: scale(1.05);
@@ -25,4 +25,22 @@ body{
     
     color: #fff !important;
     font-family: 'Centra', sans-serif !important;
+  }
+
+  .chrono-wrapper {
+    width: 80%; /* Reduce overall width */
+    margin: auto;
+  }
+  
+  .chrono-icons {
+    transform: scale(0.7); /* Make icons smaller */
+  }
+  
+  .chrono-timeline .card {
+    font-size: 0.9rem; /* Adjust font size for smaller text */
+    padding: 10px; /* Reduce padding for smaller cards */
+  }
+  
+  .card-subtitle, .card-title {
+    text-align: center; /* Ensure titles remain visually balanced */
   }

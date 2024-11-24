@@ -60,7 +60,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{`Hello there!👋  I'm Ranjith`} <span className="txt-rotate" dataPeriod="5000" data-rotate='[ "Master in Cloud Computing ", "Full-Stack Developer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Hello there!👋  I'm Ranji`} <span className="txt-rotate" dataPeriod="5000" data-rotate='[ "Master in Cloud Computing ", "Full-Stack Developer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>I'm a Cloud Computing and Web Development enthusiast with hands-on experience in building scalable, real-time applications using Django, ReactJS, and AWS. Proven ability to collaborate effectively in teams and demonstrate rapid learning in new environments, as recognized by peers and supervisors.</p>
                   <button>
       Download CV

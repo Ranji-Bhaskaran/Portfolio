@@ -137,7 +137,7 @@ export const Projects = () => {
     {
       title: 'The Joy Of Computing Using Python',
       description: "NPTEL",
-      imgUrl: projImg15,
+      imgUrl: projImg13,
       url1: 'https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS122S1446049210039924',
     },
     {

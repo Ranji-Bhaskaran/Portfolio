@@ -15,7 +15,7 @@ export const TimeLine = () => {
       title: '2020 - 2024',
       cardTitle: "Bachelor's Degree",
       cardSubtitle: 'Easwari Engineering College, Chennai',
-      cardDetailedText: 'B.E (Electronics and Communication Engineering)\nCGPA: 9.1 | 91% | 1:1',
+      cardDetailedText: 'B.E (Electronics and Communication Engineering)\nCGPA: 9.23 | 92.3% | 1:1',
     },
   ];
 

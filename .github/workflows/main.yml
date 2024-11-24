@@ -1,44 +1,43 @@
-name: Deploy to Vercel
+name: Vercel Deployment
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # Change this to your branch if needed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      # Checkout the latest code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'  # specify your desired Node.js version
+      # Set up Node.js with the specified version
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Adjust the Node.js version as needed
 
-    - name: Install dependencies
-      run: |
-        npm install --legacy-peer-deps
+      # Install dependencies using npm
+      - name: Install dependencies
+        run: |
+          npm install --legacy-peer-deps
 
-    - name: Deploy to Vercel
-      uses: amondnet/vercel-action@v20  # Vercel GitHub Action
-      with:
-        vercel_token: ${{ secrets.VERCEL_TOKEN }}   # Set your Vercel token in GitHub Secrets
-        vercel_org_id: ${{ secrets.VERCEL_ORG_ID }} # Vercel Organization ID from your Vercel Dashboard
-        vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }} # Vercel Project ID from your Vercel Dashboard
-        vercel_dir: '.'  # Set to the root directory of your project
+      # Build the project (skip warnings)
+      - name: Build project
+        run: |
+          CI=false npm run build  # Ignore warnings during the build
 
-    - name: Vercel Deploy Log
-      run: echo "Deployed to Vercel successfully"
+      # Install Vercel CLI globally
+      - name: Install Vercel CLI
+        run: npm install -g vercel  # Install Vercel CLI globally
 
-
-       #   with:
-    #     vercel_token: 'iEBwhofXuuUagyq7kZ8IM1RT'
-    #     vercel_org_id: 'team_YzvZ0DAok6ca08bXsjr9gFiS'
-    #     vercel_project_id: 'prj_BGv8BKAZTpTCOFdHB9FJSqF0NS53'
-    #     vercel_dir: '.'  # Set to the root directory of your project
+      # Link the project to Vercel and deploy to production
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Use secrets securely
+        run: |
+          vercel link --token $VERCEL_TOKEN --yes  # Automatically confirm the link
+          vercel --prod --token $VERCEL_TOKEN  # Deploy to production

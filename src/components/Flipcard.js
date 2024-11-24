@@ -1,6 +1,10 @@
 import React from "react";
 import "./Flipcard.css";
-import projImg1 from "../assets/img/project-img1.png";
+import projImg1 from "../assets/img/project-img1.jpg";
+import projImg2 from "../assets/img/project-img2.jpg";
+import projImg3 from "../assets/img/project-img3.jpg";
+import projImg4 from "../assets/img/project-img4.jpg";
+import projImg5 from "../assets/img/project-img5.jpg";
 
 import Text from "./Text";
 function Flipcard() {
@@ -50,7 +54,7 @@ function Flipcard() {
                   <div class="front" style={{ background: '#9381FF' }}>
                     <img
                       class="lazyload"
-                      src={projImg1 }
+                      src={projImg2 }
                       alt=""
                       style={{ width: '300px', height: '250px' }}
                     />
@@ -81,7 +85,7 @@ function Flipcard() {
                   <div class="front" style={{ background: '#c770f0' }}>
                     <img
                       class="lazyload"
-                      src={projImg1 }
+                      src={projImg3 }
                       alt="Avatar"
                       style={{ width: '300px', height: '250px' }}
                     />
@@ -111,7 +115,7 @@ function Flipcard() {
                   <div class="front" style={{ background: '#9381FF ' }}>
                     <img
                       class="lazyload"
-                      src={projImg1 }
+                      src={projImg4 }
                       alt="Avatar"
                       style={{ width: '300px', height: '250px' }}
                     />
@@ -137,7 +141,7 @@ function Flipcard() {
                   <div class="front" style={{ background: '#c770f0 ' }}>
                     <img
                       class="lazyload"
-                      src={projImg1 }
+                      src={projImg5 }
                       alt="Avatar"
                       style={{ width: '300px', height: '250px' }}
                     />

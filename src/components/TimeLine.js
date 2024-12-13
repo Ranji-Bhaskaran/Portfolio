@@ -1,48 +1,74 @@
-import React from 'react';
-import { Chrono } from 'react-chrono';
+import React, { useState } from 'react';
 import './TimeLine.css';
-import Text from './Text';
 
-export const TimeLine = () => {
-  const timelineItems = [
+const TimeLine = () => {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const toggleCard = (index) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  const educationData = [
     {
-      title: '2024 - 2025',
-      cardTitle: "Master's Degree",
-      cardSubtitle: 'National College of Ireland, Dublin',
-      cardDetailedText: 'MSc in Cloud Computing',
+      year: '2024 - 2025',
+      degree: "Master's Degree",
+      institution: 'National College of Ireland, Dublin',
+      details: 'MSc in Cloud Computing',
+      modules: [
+        'Cloud Architectures',
+        'Cloud DevOpsSec',
+        'Blockchain',
+        'Data Governance',
+        'Fog Computing',
+        'Compliance and Ethics',
+      ],
     },
     {
-      title: '2020 - 2024',
-      cardTitle: "Bachelor's Degree",
-      cardSubtitle: 'Easwari Engineering College, Chennai',
-      cardDetailedText: 'B.E (Electronics and Communication Engineering)\nCGPA: 9.1 | 91% | 1:1',
+      year: '2020 - 2024',
+      degree: "Bachelor's Degree",
+      institution: 'Easwari Engineering College, Chennai',
+      details: 'B.E (Electronics and Communication Engineering)\nCGPA: 9.1 | 91% | 1:1',
+      modules: [
+        'Networking Protocols and Communications',
+        'Signal Processing and Digital Communication',
+        'Embedded Systems and Microcontroller Programming',
+        'Control Systems and Automation',
+      ],
     },
   ];
 
   return (
-    <section id="about">
-      <br />
-      <br />
-      <br />
-      <h2 className="education">
-        <Text>Education</Text>
-      </h2>
-      <div className="chrono-wrapper">
-        <Chrono
-          items={timelineItems}
-          mode="VERTICAL_ALTERNATING" // Alternate layout
-          hideControls={true} // Disable navbar and controls
-          scrollable={false} // Ensure the timeline is not scrollable
-          theme={{
-            primary: '#c770f0',
-            secondary: '#B8B8FF',
-            cardBgColor: '#2c2c2c',
-            cardForeColor: 'white',
-          }}
-          cardHeight={100} // Keep small card size
-          disableControl={true} // Disable the timeline controls
-        />
+    <section id="education" className="education-section">
+      <h2 className="section-title">Education</h2>
+      <div className="education-container">
+        {educationData.map((edu, index) => (
+          <div
+            className={`education-card ${expandedCard === index ? 'expanded' : ''}`}
+            key={index}
+            onClick={() => toggleCard(index)}
+            onKeyDown={(e) => e.key === 'Enter' && toggleCard(index)}
+            tabIndex={0}
+            role="button"
+            aria-expanded={expandedCard === index}
+          >
+            <div className="education-header">
+              <h3 className="education-year">{edu.year}</h3>
+              <h4 className="education-degree">{edu.degree}</h4>
+            </div>
+            <div className="education-body">
+              <p className="education-institution">{edu.institution}</p>
+              <p className="education-details">{edu.details}</p>
+              {expandedCard === index && (
+                <p className="education-modules">
+                  <strong>Modules:</strong> {edu.modules.join(', ')}
+                </p>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 };
+
+export default TimeLine;

@@ -26,7 +26,7 @@ import projImg21 from "../assets/img/c_cn.jpg";
 import pythonAndAiImg from "../assets/img/c_pythonandai.jpg";
 
 
-import colorSharp2 from "../assets/img/color-sharp2.png";
+import colorSharp2 from "../assets/img/banner-bg.png";
 import { Link } from "react-router-dom"; 
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -153,19 +153,19 @@ export const Projects = () => {
       title: 'Frontend Developer Intern',
       description: 'Collaborated with a cross-functional team to design and enhance the frontend of a Transport Management System using Angular, achieving a 30% improvement in user interface efficiency. Contributed to the development and deployment of interactive components, significantly enhancing the systems usability. Gained hands-on experience in API integration by developing a weather API project in Angular, showcasing real-time data handling and responsiveness. Demonstrated the ability to quickly master new tools and frameworks, earning recognition as a swift and proficient learner.',
       imgUrl: projImg4,
-      url1: 'https://drive.google.com/file/d/1C8PdxN55Q4ECAjSr-H1sHtk2WkIdWyFg/view?usp=drivesdk',
+      url: '/',
     },
     {
       title: 'Frontend Masters',
       description: 'Completed an intensive 3-month course in modern frontend development, acquiring advanced proficiency in HTML, CSS, JavaScript, and ReactJS. Developed interactive and responsive web applications, gaining a deep understanding of component-based architecture and creating reusable UI components to streamline development processes.',
       imgUrl: projImg5,
-      url1: 'https://drive.google.com/file/d/1COXJglGYKOuaV8jQ-lMI1WiQ1PBC3J-f/view?usp=drivesdk',
+      url: '/',
     },
     {
-      title: 'SMD Line Production',
-      description: 'Throughout the internship, I developed a deep understanding of SMD production processes, including solder paste application, pick-and-place operations, and reflow soldering techniques.Working closely with industry professionals, I gained expertise in operating and maintaining SMD assembly lines, ensuring the efficient production of electronic components.',
+      title: 'Cloud Developer Intern',
+      description: 'Gained hands-on experience with AWS services like S3, DynamoDB, SNS, Lambda, CloudWatch, EventBridge, EC2, IAM, and Cloud9, using both the console and programmatic approaches. Learned to design, automate, and monitor workflows, leveraging tools like Datadog for application performance and observability.',
       imgUrl: projImg6,
-      url1: 'https://drive.google.com/file/d/1CNO7pgZrUQT0PX0jPGjkkfVa-SiuILjk/view?usp=drivesdk',
+      url: '/',
     },
     
   ];

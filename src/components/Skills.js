@@ -27,7 +27,7 @@ export const Skills = () => {
   };
 
   return (
-    <section className="skills" id="skills">
+    <section className="skills" id="skills" style={{ position: "relative", backgroundColor: "black" }}>
       <Container>
         <Row>
           <Col>
@@ -35,7 +35,7 @@ export const Skills = () => {
             <br />
             <br />
             <div className="skill-bx">
-              <h2>Skills</h2>
+              <h2 style={{ color: "white" }}>Skills</h2>
               <br />
               <div
                 style={{
@@ -47,82 +47,94 @@ export const Skills = () => {
               >
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter1} alt="HTML" style={skillStyle} />
-                  <h5>HTML</h5>
+                  <h5 style={{ color: "white" }}>HTML</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter2} alt="CSS" style={skillStyle} />
-                  <h5>CSS</h5>
+                  <h5 style={{ color: "white" }}>CSS</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter3} alt="JavaScript" style={skillStyle} />
-                  <h5>JavaScript</h5>
+                  <h5 style={{ color: "white" }}>JavaScript</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter4} alt="React JS" style={skillStyle} />
-                  <h5>React JS</h5>
+                  <h5 style={{ color: "white" }}>React JS</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter5} alt="AWS" style={skillStyle} />
-                  <h5>AWS Fundamentals</h5>
+                  <h5 style={{ color: "white" }}>AWS Fundamentals</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter6} alt="Python" style={skillStyle} />
-                  <h5>Python Programming</h5>
+                  <h5 style={{ color: "white" }}>Python Programming</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter18} alt="Go Lang" style={skillStyle} />
-                  <h5>Go Lang</h5>
+                  <h5 style={{ color: "white" }}>Go Lang</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter7} alt="C" style={skillStyle} />
-                  <h5>C ++</h5>
+                  <h5 style={{ color: "white" }}>C ++</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter8} alt="SQL" style={skillStyle} />
-                  <h5>SQL Server</h5>
+                  <h5 style={{ color: "white" }}>SQL Server</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter9} alt="Angular" style={skillStyle} />
-                  <h5>Angular</h5>
+                  <h5 style={{ color: "white" }}>Angular</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter10} alt="Next JS" style={skillStyle} />
-                  <h5>Next JS</h5>
+                  <h5 style={{ color: "white" }}>Next JS</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter11} alt="Express JS" style={skillStyle} />
-                  <h5>Express JS</h5>
+                  <h5 style={{ color: "white" }}>Express JS</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter12} alt="Metamask" style={skillStyle} />
-                  <h5>Metamask</h5>
+                  <h5 style={{ color: "white" }}>Metamask</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter13} alt="Django" style={skillStyle} />
-                  <h5>Django</h5>
+                  <h5 style={{ color: "white" }}>Django</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter14} alt="MongoDB" style={skillStyle} />
-                  <h5>MongoDB</h5>
+                  <h5 style={{ color: "white" }}>MongoDB</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter15} alt="Kubernetes" style={skillStyle} />
-                  <h5>Kubernetes</h5>
+                  <h5 style={{ color: "white" }}>Kubernetes</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter16} alt="Docker" style={skillStyle} />
-                  <h5>Docker</h5>
+                  <h5 style={{ color: "white" }}>Docker</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter17} alt="GitHub" style={skillStyle} />
-                  <h5>GitHub</h5>
+                  <h5 style={{ color: "white" }}>GitHub</h5>
                 </div>
               </div>
             </div>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-left" src={colorSharp} alt="Background" />
+      <img
+        className="background-image-left"
+        src={colorSharp}
+        alt="Background"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1, // Ensures the image stays behind the content
+        }}
+      />
     </section>
   );
 };

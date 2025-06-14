@@ -10,7 +10,7 @@ const toRotate = [
   "AWS Certified Developer ☁️",
   "Full-Stack Engineer 💻"
 ];
-const typingSpeed = 80;  // faster typing speed
+const typingSpeed = 80;
 const deletingSpeed = 40;
 const pauseTime = 1500;
 
@@ -19,6 +19,16 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(typingSpeed);
+  const [viewCount, setViewCount] = useState(() => {
+    // Reset to 233, overriding the existing localStorage value
+    const storedCount = Number(localStorage.getItem("viewCount")) || 0;
+    const newCount = storedCount < 233 ? 233 : storedCount; // Start at 233 or keep if higher
+    localStorage.setItem("viewCount", newCount);
+    return newCount;
+  });
+  const [downloadCount, setDownloadCount] = useState(() => {
+    return Number(localStorage.getItem("downloadCount")) || 0;
+  });
 
   useEffect(() => {
     const ticker = setTimeout(() => {
@@ -26,6 +36,15 @@ export const Banner = () => {
     }, delta);
     return () => clearTimeout(ticker);
   }, [text]);
+
+  useEffect(() => {
+    // Increment view count only once on mount
+    setViewCount(prev => {
+      const newCount = prev + 1;
+      localStorage.setItem("viewCount", newCount);
+      return newCount;
+    });
+  }, []);
 
   const tick = () => {
     const i = loopNum % toRotate.length;
@@ -50,6 +69,11 @@ export const Banner = () => {
 
   const handleDownload = () => {
     window.open("https://drive.google.com/file/d/1YwulSTNz9KZV-U2WErW3dTpedLSLeL4z/view?usp=drive_link", "_blank");
+    setDownloadCount(prev => {
+      const newCount = prev + 1;
+      localStorage.setItem("downloadCount", newCount);
+      return newCount;
+    });
   };
 
   return (
@@ -66,6 +90,10 @@ export const Banner = () => {
                 <button onClick={handleDownload}>
                   Download CV <ArrowDownCircle size={25} />
                 </button>
+                <div style={{ marginTop: "10px" }}>
+                  <p>Website Views: {viewCount}</p>
+                  <p>CV Downloads: {downloadCount}</p>
+                </div>
               </div>}
             </TrackVisibility>
           </Col>

@@ -44,7 +44,11 @@ export const Skills = () => {
                   gap: "20px",
                   justifyContent: "center",
                 }}
-              >
+              > 
+                <div style={{ textAlign: "center", width: "150px" }}>
+                  <img src={meter5} alt="AWS" style={skillStyle} />
+                  <h5 style={{ color: "white" }}>AWS</h5>
+                </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter1} alt="HTML" style={skillStyle} />
                   <h5 style={{ color: "white" }}>HTML</h5>
@@ -60,10 +64,6 @@ export const Skills = () => {
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter4} alt="React JS" style={skillStyle} />
                   <h5 style={{ color: "white" }}>React JS</h5>
-                </div>
-                <div style={{ textAlign: "center", width: "150px" }}>
-                  <img src={meter5} alt="AWS" style={skillStyle} />
-                  <h5 style={{ color: "white" }}>AWS Fundamentals</h5>
                 </div>
                 <div style={{ textAlign: "center", width: "150px" }}>
                   <img src={meter6} alt="Python" style={skillStyle} />

@@ -2,15 +2,16 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import { EducationCard } from "./EducationCard";
 import { InternCard } from "./InternCard";
-import projImg1 from "../assets/img/b_cloud.jpg";
-import projImg2 from "../assets/img/b_storage2.jpg";
-import projImg3 from "../assets/img/b_compute.jpg";
+import projImg0 from "../assets/img/aws-certified-solutions-architect-associate.png";
+import projImg1 from "../assets/img/b_cloud.png";
+import projImg2 from "../assets/img/b_storage2.png";
+import projImg3 from "../assets/img/b_compute.png";
 import projImg4 from "../assets/img/i_android.jpeg";
 import projImg5 from "../assets/img/i_web.jpeg";
 import projImg6 from "../assets/img/i_smt.jpeg";
-import projImg7 from "../assets/img/b_network.jpg";
-import projImg8 from "../assets/img/b_data.jpg";
-import projImg9 from "../assets/img/b_ibm.jpg";
+import projImg7 from "../assets/img/b_network.png";
+import projImg8 from "../assets/img/b_data.png";
+import projImg9 from "../assets/img/b_ibm.png";
 import projImg10 from "../assets/img/b_ai.jpg";
 import projImg11 from "../assets/img/c_awscloudprac.jpg";
 import projImg12 from "../assets/img/c_go.jpg";
@@ -33,45 +34,7 @@ import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
-    {
-      title: "AWS Educate Introduction to Cloud 101",
-      imgUrl: projImg1,
-      url1: 'https://www.credly.com/badges/1249c34b-1130-4942-a11d-d413c0a67f63/public_url',
-    
-    },
-    {
-      title: "AWS Educate Getting Started with Storage",      
-      imgUrl: projImg2,
-      url1: 'https://www.credly.com/badges/2006c7eb-fb71-48ab-9bf6-d3d98b5685b3/public_url',
-      
-    },
-    {
-      title: "AWS Educate Getting Started with Compute", 
-      imgUrl: projImg3,
-      url1:'https://www.credly.com/badges/b5917abd-53b4-4dec-9d78-1ec62bd6eb8b/public_url',
-    },
-    {
-      title: "AWS Educate Getting Started with Networking",
-      imgUrl: projImg7,
-      url1:'https://www.credly.com/badges/fb8cebe5-6190-4962-8e14-841addef6409/public_url',
-    },
-    {
-      title: "AWS Educate Getting Started with Databases",
-      imgUrl: projImg8,
-      url1:'https://www.credly.com/badges/7d555eaa-b664-4499-a97f-5329e6c27bdc/public_url',
-    },
-    {
-      title: "Python for Data Science",
-      imgUrl: projImg9,
-      url1:'https://www.credly.com/badges/ac15a13a-3ae5-4b55-a044-f51c2f3d5231/public_url',
-    },
-    {
-      title: "Introduction to Generative AI",
-      imgUrl: projImg10,
-      url1:'https://www.cloudskillsboost.google/public_profiles/c0f565f0-95af-4020-ae3b-e9abee938806/badges/5649029',
-    },
-  ];
+  
 
   const certifications = [
     {
@@ -146,6 +109,53 @@ export const Projects = () => {
       imgUrl: projImg15,
       url1: 'https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23MG28S1334077204233567',
     },
+  ];
+
+  const projects = [
+    {
+      title: "AWS Solutions Architect Associate",
+      imgUrl: projImg0,
+      url1: 'https://www.credly.com/badges/7ffc57bd-cf34-4eda-b15c-38b2f259d050/public_url',
+    
+    },
+    {
+      title: "AWS Educate Introduction to Cloud 101",
+      imgUrl: projImg1,
+      url1: 'https://www.credly.com/badges/1249c34b-1130-4942-a11d-d413c0a67f63/public_url',
+    
+    },
+    {
+      title: "AWS Educate Getting Started with Storage",      
+      imgUrl: projImg2,
+      url1: 'https://www.credly.com/badges/2006c7eb-fb71-48ab-9bf6-d3d98b5685b3/public_url',
+      
+    },
+    {
+      title: "AWS Educate Getting Started with Compute", 
+      imgUrl: projImg3,
+      url1:'https://www.credly.com/badges/b5917abd-53b4-4dec-9d78-1ec62bd6eb8b/public_url',
+    },
+    {
+      title: "AWS Educate Getting Started with Networking",
+      imgUrl: projImg7,
+      url1:'https://www.credly.com/badges/fb8cebe5-6190-4962-8e14-841addef6409/public_url',
+    },
+    {
+      title: "AWS Educate Getting Started with Databases",
+      imgUrl: projImg8,
+      url1:'https://www.credly.com/badges/7d555eaa-b664-4499-a97f-5329e6c27bdc/public_url',
+    },
+    {
+      title: "Introduction to Generative AI",
+      imgUrl: projImg10,
+      url1:'https://www.cloudskillsboost.google/public_profiles/c0f565f0-95af-4020-ae3b-e9abee938806/badges/5649029',
+    },
+    {
+      title: "Python for Data Science",
+      imgUrl: projImg9,
+      url1:'https://www.credly.com/badges/ac15a13a-3ae5-4b55-a044-f51c2f3d5231/public_url',
+    },
+    
   ];
 
   const internships = [

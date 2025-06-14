@@ -1,14 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import { EducationCard } from "./EducationCard";
-import { InternCard } from "./InternCard";
 import projImg0 from "../assets/img/aws-certified-solutions-architect-associate.png";
 import projImg1 from "../assets/img/b_cloud.png";
 import projImg2 from "../assets/img/b_storage2.png";
 import projImg3 from "../assets/img/b_compute.png";
-import projImg4 from "../assets/img/i_android.jpeg";
 import projImg5 from "../assets/img/i_web.jpeg";
-import projImg6 from "../assets/img/i_smt.jpeg";
 import projImg7 from "../assets/img/b_network.png";
 import projImg8 from "../assets/img/b_data.png";
 import projImg9 from "../assets/img/b_ibm.png";
@@ -25,17 +22,11 @@ import projImg19 from "../assets/img/c_sql.jpg";
 import projImg20 from "../assets/img/c_git.jpg";
 import projImg21 from "../assets/img/c_cn.jpg";
 import pythonAndAiImg from "../assets/img/c_pythonandai.jpg";
-
-
 import colorSharp2 from "../assets/img/banner-bg.png";
-import { Link } from "react-router-dom"; 
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
-
-  
-
   const certifications = [
     {
       title: 'AWS Cloud Practitioner Essentials',
@@ -116,19 +107,16 @@ export const Projects = () => {
       title: "AWS Solutions Architect Associate",
       imgUrl: projImg0,
       url1: 'https://www.credly.com/badges/7ffc57bd-cf34-4eda-b15c-38b2f259d050/public_url',
-    
     },
     {
       title: "AWS Educate Introduction to Cloud 101",
       imgUrl: projImg1,
       url1: 'https://www.credly.com/badges/1249c34b-1130-4942-a11d-d413c0a67f63/public_url',
-    
     },
     {
       title: "AWS Educate Getting Started with Storage",      
       imgUrl: projImg2,
       url1: 'https://www.credly.com/badges/2006c7eb-fb71-48ab-9bf6-d3d98b5685b3/public_url',
-      
     },
     {
       title: "AWS Educate Getting Started with Compute", 
@@ -155,30 +143,17 @@ export const Projects = () => {
       imgUrl: projImg9,
       url1:'https://www.credly.com/badges/ac15a13a-3ae5-4b55-a044-f51c2f3d5231/public_url',
     },
-    
   ];
 
   const internships = [
     {
-      title: 'Frontend Developer Intern',
-      description: 'Collaborated with a cross-functional team to design and enhance the frontend of a Transport Management System using Angular, achieving a 30% improvement in user interface efficiency. Contributed to the development and deployment of interactive components, significantly enhancing the systems usability. Gained hands-on experience in API integration by developing a weather API project in Angular, showcasing real-time data handling and responsiveness. Demonstrated the ability to quickly master new tools and frameworks, earning recognition as a swift and proficient learner.',
-      imgUrl: projImg4,
-      url: '/',
-    },
-    {
-      title: 'Frontend Masters',
-      description: 'Completed an intensive 3-month course in modern frontend development, acquiring advanced proficiency in HTML, CSS, JavaScript, and ReactJS. Developed interactive and responsive web applications, gaining a deep understanding of component-based architecture and creating reusable UI components to streamline development processes.',
+      title: 'Cloud Support Engineer Intern',
+      description: 'Enhanced Transport Management System with Angular and Python, boosting UI responsiveness by 30%, while developing RESTful APIs with MySQL for scalable backend integration and automating CI/CD pipelines with Git and Jenkins for efficient deployment. Optimized system performance using AWS CloudWatch and custom scripts, improving uptime, and gained expertise in cloud architecture, containerization, and monitoring for enhanced stability. Recognized for quickly adapting to new technologies and delivering high-impact solutions in a fast-paced Agile environment.',
       imgUrl: projImg5,
-      url: '/',
+      url: 'https://www.linkedin.com/in/ranjith-bhaskaran05', // Ensured proper URL format with https
     },
-    {
-      title: 'Cloud Developer Intern',
-      description: 'Gained hands-on experience with AWS services like S3, DynamoDB, SNS, Lambda, CloudWatch, EventBridge, EC2, IAM, and Cloud9, using both the console and programmatic approaches. Learned to design, automate, and monitor workflows, leveraging tools like Datadog for application performance and observability.',
-      imgUrl: projImg6,
-      url: '/',
-    },
-    
   ];
+
   return (
     <section className="project" id="projects">
       <Container>
@@ -186,77 +161,82 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <h2>Credentials</h2>
                 <br></br>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                <Nav variant="pills" className="nav-pills mb-3 justify-content-center align-items-center" id="pills-tab">
-                <Nav.Item>
-                  <Nav.Link eventKey="first">Badges</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="second">Certifications</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="third">Internships</Nav.Link>
-                </Nav.Item>
-                
-              </Nav>
-              <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                  <Nav variant="pills" className="nav-pills mb-3 justify-content-center align-items-center" id="pills-tab">
+                    <Nav.Item>
+                      <Nav.Link eventKey="first">Badges</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="second">Certifications</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="third">Internships</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
+                        {projects.map((project, index) => (
+                          <ProjectCard key={index} {...project} />
+                        ))}
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-  <Row>
-    {
-      certifications.map((certification, index) => {
-        return (
-          <EducationCard
-            key={index}
-            {...certification}
-          />
-        )
-      })
-    }
-  </Row>
-</Tab.Pane>
-
+                      <Row>
+                        {certifications.map((certification, index) => (
+                          <EducationCard key={index} {...certification} />
+                        ))}
+                      </Row>
+                    </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                    <Row>
-                    
-                          {
-                          internships.map((internship, index) => {
-                            return (
-                              <InternCard
-                                key={index}
-                                {...internship}
-                              />
-                            )
-                          })
-                          }
-                        </Row>
-              </Tab.Pane>
-
+                      <Row>
+                        {internships.map((internship, index) => (
+                          <Col md={12} key={index} className="mb-4">
+                            <div className="internship-card" style={{ display: 'flex', alignItems: 'center', background: '#2a2a72', borderRadius: '15px', padding: '20px', color: '#fff' }}>
+                              <div className="intern-image" style={{ flex: '0 0 30%', marginRight: '20px' }}>
+                                <img src={internship.imgUrl} alt={internship.title + ' Image'} style={{ width: '100%', borderRadius: '10px' }} />
+                              </div>
+                              <div className="intern-content" style={{ flex: '1', position: 'relative' }}>
+                                <div className="intern-description" style={{ display: 'block' }}>
+                                  {internship.description}
+                                </div>
+                                <div className="intern-title" style={{ display: 'none', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontSize: '1.5rem', fontWeight: 'bold' }}>
+                                  {internship.title}
+                                </div>
+                                <a href={internship.url} target="_blank" rel="noopener noreferrer" style={{ color: '#00aaff', textDecoration: 'none' }}>View More</a>
+                              </div>
+                            </div>
+                            <style>
+                              {`
+                                .internship-card .intern-content:hover .intern-description {
+                                  display: none;
+                                }
+                                .internship-card .intern-content:hover .intern-title {
+                                  display: block;
+                                }
+                                .internship-card .intern-content .intern-description {
+                                  transition: opacity 0.3s ease;
+                                }
+                                .internship-card .intern-content:hover .intern-description {
+                                  opacity: 0;
+                                }
+                              `}
+                            </style>
+                          </Col>
+                        ))}
+                      </Row>
+                    </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
-               
               </div>}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="Background Decoration" />
     </section>
   )
 }

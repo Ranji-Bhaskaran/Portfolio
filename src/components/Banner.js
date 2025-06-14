@@ -68,7 +68,7 @@ export const Banner = () => {
   };
 
   const handleDownload = () => {
-    window.open("https://drive.google.com/file/d/1YwulSTNz9KZV-U2WErW3dTpedLSLeL4z/view?usp=drive_link", "_blank");
+    window.open("https://drive.google.com/file/d/1n49iYC3vd6qt2-AimxRvNj_0pkIieyku/view?usp=drive_link", "_blank");
     setDownloadCount(prev => {
       const newCount = prev + 1;
       localStorage.setItem("downloadCount", newCount);

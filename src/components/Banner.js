@@ -20,12 +20,9 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(typingSpeed);
   const [viewCount, setViewCount] = useState(() => {
-    // Reset to 233, overriding the existing localStorage value
-    const storedCount = Number(localStorage.getItem("viewCount")) || 0;
-    const newCount = storedCount < 233 ? 233 : storedCount; // Start at 233 or keep if higher
-    localStorage.setItem("viewCount", newCount);
-    return newCount;
-  });
+  return Number(localStorage.getItem("viewCount")) || 0;
+});
+
   const [downloadCount, setDownloadCount] = useState(() => {
     return Number(localStorage.getItem("downloadCount")) || 0;
   });

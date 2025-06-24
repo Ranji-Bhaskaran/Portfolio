@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CarouselProjects.css";
-
+import nasaGif from "../assets/img/Nasaflix-preview.gif";
 import projImg1 from "../assets/img/project-img1.jpg";
 import projImg2 from "../assets/img/project-img2.jpg";
 import projImg3 from "../assets/img/project-img3.jpg";
@@ -38,6 +38,11 @@ function CarouselProjects() {
       img: projImg1,
       title: "Real Estate Management",
       link: "https://github.com/Ranji-Bhaskaran/RealEstateManagement",
+    },
+    {
+      img: nasaGif,
+      title: "NASA-Flix",
+      link: "https://nasa-flix.vercel.app/",
     },
     {
       img: projImg2,
